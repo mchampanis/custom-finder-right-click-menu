@@ -33,7 +33,7 @@ public func programsDir() -> URL {
     let scriptParentDirURL = FileManager.default.homeDirectoryForCurrentUser
 
     // Get the URL for menu programs dir path.
-    let menuProgramsDirURL = scriptParentDirURL.appendingPathComponent(menuProgramsDirName)
+    let menuProgramsDirURL = scriptParentDirURL.appendingPathComponent(menuProgramsDirName, isDirectory: true)
     
     return menuProgramsDirURL
 }

@@ -78,6 +78,13 @@ func copyFile(fileName: String, fileExt: String, detination: URL) -> Bool? {
     }
 }
 
+func configDirectoryExists() -> Bool {
+    let programsDirUrl = programsDir()
+    var isDirectory: ObjCBool = false
+    FileManager.default.fileExists(atPath: programsDirUrl.path, isDirectory: &isDirectory)
+    return isDirectory.boolValue
+}
+
 // Copy the default right click menu scripts available in the bundle to
 // the ~/.findermenu dir.
 func copyDefaultScripts() {
@@ -157,7 +164,9 @@ let delegate = AppDelegate()
 NSApplication.shared.delegate = delegate
 
 // Copy the default right cick script files to ~/.findermenu.
-copyDefaultScripts()
+if (!configDirectoryExists()) {
+    copyDefaultScripts()
+}
 
 // Initialize launch agent for right click service.
 initLaunchd()
