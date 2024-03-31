@@ -79,7 +79,7 @@ func copyFile(fileName: String, fileExt: String, detination: URL) -> Bool? {
 }
 
 // Copy the default right click menu scripts available in the bundle to
-// the ~/FinderMenu dir.
+// the ~/.findermenu dir.
 func copyDefaultScripts() {
     // Create the programs dir.
     let programsDirUrl = programsDir()
@@ -156,7 +156,7 @@ func initLaunchd() {
 let delegate = AppDelegate()
 NSApplication.shared.delegate = delegate
 
-// Copy the default right cick script files to ~/FinderMenu.
+// Copy the default right cick script files to ~/.findermenu.
 copyDefaultScripts()
 
 // Initialize launch agent for right click service.
