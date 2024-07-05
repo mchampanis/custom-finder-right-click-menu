@@ -7,7 +7,7 @@ The application has been tested to work on macOS Sonoma `14.3.1`.
 
 ## Download the Application
 
-[Download the app here](https://samiyuru.com/project/macOS-finder-right-click-menu).
+Not Working: [Download the app here](https://samiyuru.com/project/macOS-finder-right-click-menu).
 
 You can download a pre built app file that is ready to run from the above link.
 
