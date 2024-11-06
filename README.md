@@ -7,11 +7,11 @@ The application has been tested to work on macOS Sonoma `14.3.1`.
 
 ## Download the Application
 
-[Download the app here](https://samiyuru.com/project/macOS-finder-right-click-menu).
+[Download macOS Sonoma binary](https://github.com/mchampanis/custom-finder-right-click-menu/releases).
 
-You can download a pre built app file that is ready to run from the above link.
+You can download a pre-built app file that is ready to run from the above link.
 
-You can build the application from the source code on MacOS using Xcode.
+You can build the application from the source code on macOS using Xcode.
 
 
 ## Using the Application
