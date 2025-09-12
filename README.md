@@ -7,6 +7,8 @@
 - prevent multiple copies of app running
 - macOS Sonoma build with the above released
 
+## Description
+
 This application allows you to add custom right click menu items to directories opened in MacOS Finder.
 Right click menu items can be added as shell scripts.
 The application comes with two script files inbuilt to create new text documents in the current directory and to open terminal from the current directory.
