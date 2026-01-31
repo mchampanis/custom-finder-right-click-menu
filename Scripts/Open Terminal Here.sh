@@ -19,4 +19,4 @@
 # Param is the directory to open the Terminal in.
 ######################################################
 
-open -a "Terminal" "$1"
+open -a Terminal "$1"

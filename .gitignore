@@ -1,4 +1,5 @@
 *.iml
 /.idea
-/FinderMenu.xcodeproj/xcuserdata
-/FinderMenu.xcodeproj/xcshareddata
+xcshareddata/
+xcuserdata/
+.DS_Store

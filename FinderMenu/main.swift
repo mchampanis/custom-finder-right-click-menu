@@ -3,7 +3,7 @@
 //  FinderMenu
 //
 //  Created by Samiyuru Senarathne on 1/22/20.
-//  Copyright © 2020 Samiyuru Senarathne.
+//  Copyright © 2026 Samiyuru Senarathne.
 //
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY
 //  OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
@@ -19,10 +19,10 @@
 
 import Cocoa
 import FinderSync
-import Commons
+import Common
 
 // The name of the launch agent (in plist).
-let launchAgentName = "com.samiyuru.findermenu-service"
+let launchAgentName = "com.samiyuru.findermenuservice"
 
 // AppDelegate that is used in main.swift top level code.
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -85,8 +85,7 @@ func configDirectoryExists() -> Bool {
     return isDirectory.boolValue
 }
 
-// Copy the default right click menu scripts available in the bundle to
-// the ~/.findermenu dir.
+// Copy the default right click menu scripts available in the bundle to config dir
 func copyDefaultScripts() {
     // Create the programs dir.
     let programsDirUrl = programsDir()
@@ -98,8 +97,8 @@ func copyDefaultScripts() {
     }
     
     // Copy scripts.
-    if (!(copyFile(fileName: "Open Terminal Here", fileExt: "sh", detination: programsDir().appendingPathComponent("Open Terminal Here.sh")) ?? false)
-        || !(copyFile(fileName: "Open Text File Here", fileExt: "sh", detination: programsDir().appendingPathComponent("Open Text File Here.sh")) ?? false)){
+    if (!(copyFile(fileName: "Open iTerm2 Here", fileExt: "sh", detination: programsDir().appendingPathComponent("Open iTerm2 Here.sh")) ?? false)
+        || !(copyFile(fileName: "New Text File Here", fileExt: "sh", detination: programsDir().appendingPathComponent("New Text File Here.sh")) ?? false)){
         errorAlert(text: "Failed to copy scripts.")
     }
 }
@@ -159,11 +158,11 @@ func initLaunchd() {
     NSLog("launchd setup completed.")
 }
 
-// Initalize AppDeligate and set it as the deligate of the app.
+// Initalize AppDelegate and set it as the deligate of the app.
 let delegate = AppDelegate()
 NSApplication.shared.delegate = delegate
 
-// Copy the default right cick script files to ~/.findermenu.
+// Copy the default right cick script files to config dir
 if (!configDirectoryExists()) {
     copyDefaultScripts()
 }

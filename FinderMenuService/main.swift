@@ -3,7 +3,7 @@
 //  FinderMenu
 //
 //  Created by Samiyuru Senarathne on 1/22/20.
-//  Copyright © 2020 Samiyuru Senarathne.
+//  Copyright © 2026 Samiyuru Senarathne.
 //
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY
 //  OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
@@ -18,7 +18,7 @@
 //
 
 import Cocoa
-import Commons
+import Common
 
 // Types of scripts.
 enum ScriptTypes {
@@ -143,7 +143,7 @@ class MenuItemManager {
     
     // Run script using the script info dictionary and provide target as a parameter.
     func runScript(scriptInfo: ScriptInfo?, target: URL) {
-        NSLog("Runing script \(String(describing: scriptInfo)) for \(target).")
+        NSLog("Running script \(String(describing: scriptInfo)) for \(target).")
         
         guard let scriptInfo = scriptInfo else {
             NSLog("Script info not available.")

@@ -12,7 +12,7 @@
 This application allows you to add custom right click menu items to directories opened in MacOS Finder.
 Right click menu items can be added as shell scripts.
 The application comes with two script files inbuilt to create new text documents in the current directory and to open terminal from the current directory.
-The application has been tested to work on macOS Sonoma `14.3.1`.
+The application has been tested to work up to macOS Tahoe `26.2`.
 
 ## Download the Application
 
@@ -22,6 +22,12 @@ You can download a pre-built app file that is ready to run from the above link.
 
 You can build the application from the source code on macOS using Xcode.
 
+## Building
+
+- Open `FinderMenu.xcodeproj` with Xcode
+- Set target to `FinderMenu`
+- `Product` > `Archive` to build the release version
+- Follow instructions and click the `Distribute` button at some point to save `FinderMenu.app` somewhere useful
 
 ## Using the Application
 
@@ -33,7 +39,7 @@ When you run `FinderMenu.app` once, the application will take the following step
 
 * Install a launch agent to serve the custom right click menu items.
 * Install a Finder extension to include custom right click menu items in the Finder.
-* Creates `~/.findermenu` directory to place custom right click menu scripts.
+* Creates `~/.config/findermenu` directory to place custom right click menu scripts.
 * Enable `FinderMenuItems` in `System Preferences > Extensions > Finder Extensions` in case it is not already enabled.
 
 Right click menu service in `FinderMenu.app` automatically starts with your system.
@@ -50,23 +56,23 @@ The next gif shows how the provided `Open Terminal Here` menu item works.
 
 ## Adding Custom Menu Items
 
-Adding a new right click menu item is as simple as creating a shell script in the `~/.findermenu` directory.
+Adding a new right click menu item is as simple as creating a shell script in the `~/.config/findermenu` directory.
 The shell script should accept the path to the directory as the first argument when running the script.
 File name of the script file becomes the menu item name in the right click menu.
 When the menu item is clicked, the script is executed with the directory path as the first argument.
-You can refer to the given scripts in `~/.findermenu` for examples.
-When you place a new script in `~/.findermenu`, reload FinderMenu to refresh settings:
+You can refer to the given scripts in `~/.config/findermenu` for examples.
+When you place a new script in `~/.config/findermenu`, reload FinderMenu to refresh settings:
 
 ```zsh
-launchctl kickstart -k gui/501/com.samiyuru.findermenu-service
+launchctl kickstart -k gui/501/com.samiyuru.findermenuservice
 ```
 
 ## Reset to default scripts
 
-Remove the `~/.findermenu` directory and restart FinderMenu:
+Remove the `~/.config/findermenu` directory and restart FinderMenu:
 
 ```zsh
-launchctl kickstart -k gui/501/com.samiyuru.findermenu-service
+launchctl kickstart -k gui/501/com.samiyuru.findermenuservice
 ```
 
 ## Uninstall the Application
@@ -74,23 +80,11 @@ launchctl kickstart -k gui/501/com.samiyuru.findermenu-service
 You can take the following steps if you need to completely uninstall the application form your system.
 
 * Delete the `FinderMenu.app` from `/Applications` directory.
-* Delete the `~/.findermenu` directory.
-* Disable the finder extension by gong to `System Preferences > Extensions > All` and disabling the FinderMenu item.
-* Remove the launch agent by deleting `\~/Library/LaunchAgents/com.samiyuru.findermenu-service.plist`
+* Delete the `~/.config/findermenu` directory.
+* Disable the finder extension by going to `System Preferences > Extensions > All` and disabling the FinderMenu item.
+* Remove the launch agent by deleting `\~/Library/LaunchAgents/com.samiyuru.findermenuservice.plist`
 
 
 ## Credits
 
 The icon used in the application is a modified version of an icon made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](https://www.flaticon.com).
-
-
-## License
-
-Copyright &copy; Samiyuru Menik 2024.
-
-You are permitted to use this application and source code for personal or commercial use.
-You are not permitted to fork this project or redistribute this application or any of its content.
-But, you are allowed to redistribute this application to others by pointing them to this web location.
-If you modify this application you are allowed to use the modified version personally on your own but you are not allowed to redistribute the modified version.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

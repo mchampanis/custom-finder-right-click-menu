@@ -21,7 +21,7 @@
 # Param is the directory to create the text file.
 ######################################################
 
-DEF_FILE_NAME="NewText"
+DEF_FILE_NAME="unnamed"
 FILE_EXT="txt"
 
 # Default text file name.

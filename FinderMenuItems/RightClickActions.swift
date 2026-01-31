@@ -3,7 +3,7 @@
 //  FinderMenuItems
 //
 //  Created by Samiyuru Senarathne on 1/22/20.
-//  Copyright © 2020 Samiyuru Senarathne.
+//  Copyright © 2026 Samiyuru Senarathne.
 //
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY
 //  OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
@@ -19,7 +19,7 @@
 
 import Cocoa
 import FinderSync
-import Commons
+import Common
 
 // This class is the primary class that is referred to in the plist of the Finder Sync extension.
 class RightClickActions: FIFinderSync {

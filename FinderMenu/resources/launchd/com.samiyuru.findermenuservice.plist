@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-	<string>com.samiyuru.findermenu-service</string>
+	<string>com.samiyuru.findermenuservice</string>
 	<key>ProgramArguments</key>
 	<array>
 		<string>%@</string>
